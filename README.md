@@ -7,7 +7,7 @@ This the official implementation of our paper, titled, *Learning to Recognize Ce
 ## Requirements
 This codebase is developed and fully tested on Anaconda using Ubuntu v20.04. Hence, we recommend the utilization of the same platform in order to avoid setup issues. Also, please note that we do not support Windows OS. 
 
-The execution of the code is currently dependent on two virtual environments, i.e., 'cellGraph.yaml' and 'metrics.yaml'. 'cellGraph.yaml' is to be used for training and testing the proposed framework. Moreover, in order to fairly compare our work with state-of-the-art, 'metrics.yaml' environment has to be used, as it computes the crc metrics originally developed by the [HoVerNet](https://github.com/vqdang/hover_net) devs. In future, we will merge both of these two environments but, for now, we recommend their independent usage just to avoid libs incompatibility.   
+The execution of the code is currently dependent on two virtual environments, i.e., `cellGraph.yaml` and `metrics.yaml`. `cellGraph.yaml` is to be used for training and testing the proposed framework. Moreover, in order to fairly compare our work with state-of-the-art, `metrics.yaml` environment has to be used, as it computes the crc metrics originally developed by the [HoVerNet](https://github.com/vqdang/hover_net) devs. In future, we will merge both of these two environments but, for now, we recommend their independent usage just to avoid libs incompatibility.   
 
 ## Setup
 
