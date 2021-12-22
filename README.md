@@ -101,7 +101,7 @@ python scripts/evaluate.py with prepr_w_tracktor=False
 python compute_stats.py --mode=type --pred_dir='pred_dir' --true_dir='true_dir'
 ```
 ## Acknowledgement
-We would like to thank Guillem Brasó and his team for their excellent contribution towards developing [time-aware neural solving for multi-object tracking](https://github.com/dvl-tum/mot_neural_solver). Apart from this, we would like to thanks Simon Graham and his team for their excellent work in releasing [HoVer-Net](https://github.com/vqdang/hover_net) and the original implementation of their performance metrics related to CRC nucleus segmentation and classification. Our codebase is extensively derived from these repositories/ projects, and as a token of our appreciation, we have acknowledged and cited their works in our manuscript.
+We would like to thank Guillem Brasó and his team for their excellent contribution towards developing [time-aware neural solver for multi-object tracking](https://github.com/dvl-tum/mot_neural_solver). Apart from this, we would like to thanks Simon Graham and his team for their excellent work in releasing [HoVer-Net](https://github.com/vqdang/hover_net) and the original implementation of their performance metrics related to CRC nucleus segmentation and classification. Our codebase is extensively derived from these repositories/ projects, and as a token of our appreciation, we have acknowledged and cited their works in our manuscript.
 
 ## Citation
 If you use this codebase (or any part of it) in your research, then you **MUST** cite the following paper:
