@@ -104,20 +104,13 @@ python compute_stats.py --mode=type --pred_dir='pred_dir' --true_dir='true_dir'
 We would like to thank Guillem Brasó and his team for their excellent contribution towards developing [time-aware neural solver for multi-object tracking](https://github.com/dvl-tum/mot_neural_solver). Apart from this, we would like to thank Simon Graham and his team for their excellent work in releasing [HoVer-Net](https://github.com/vqdang/hover_net) and the original implementation of their performance metrics related to CRC nucleus segmentation and classification. Our codebase is extensively derived from these repositories/ projects, and as a token of our appreciation, we have acknowledged and cited their works in our manuscript.
 
 ## Citation
-If you use this codebase (or any part of it) in your research, then you **MUST** cite one of the following papers:
+If you use this codebase (or any part of it) in your research, then you **MUST** cite the following paper:
 ```
 @article{Hassan2021Cancer,
   title   = {A Dilated Residual Hierarchically Fashioned Segmentation Framework for Extracting Gleason Tissues and Grading Prostate Cancer from Whole Slide Images},
   author  = {Taimur Hassan and Bilal Hassan and Ayman El-Baz and Naoufel Werghi},
   note = {16th IEEE Sensors Applications Symposium (SAS), 2021}
 }
-
-@article{Hassan2022Cancer,
-  title   = {A Novel Knowledge Distillation Driven Instance Segmentation Framework for Extracting Gleason Tissues to Grade Prostate Cancer},
-  author  = {Taimur Hassan and Muhammad Shafay and Bilal Hassan and M. Usman Akram and Ayman El-Baz and Naoufel Werghi},
-  note = {Under Review in Nature Scientific Reports, 2022}
-}
-
 ```
 ## Contact
 In case of any query, please feel free to contact us at taimur.hassan@ku.ac.ae
