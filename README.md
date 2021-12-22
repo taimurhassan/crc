@@ -20,7 +20,7 @@ The execution of the code is currently dependent on two virtual environments, i.
 2. Import the 'metrics.yaml' and infer the related libraries from the requirement.txt file:
    1. `conda env create -f metrics.yaml`
     
-3. Download the datasets from the following URLs. In order to use these datasets, they need to be tailored in the MOT format. For this purpose, we provide the conversion scripts as discussed in detail within the `preprocessing` section. Moreover, the desired converted datasets must be placed within the `data` folder within the project's root directory.
+3. Download the CRC datasets from their respective link. Please note that all of these datasets have to be tailored in the MOT format for their proper usage. For this purpose, we provide the conversion scripts as discussed in detail within the `preprocessing` section. Moreover, the desired converted dataset must be placed within the `data` folder within the project's root directory.
 
 4. Create two more folders (`output`, `mot_neural_solver/output`) in the project's root directory to save proposed framework's output. Their hierarchy are:
 
