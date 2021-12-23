@@ -86,8 +86,6 @@ MOV_CAMERA_DICT = {}
 #    MOV_CAMERA_DICT["MOT17-"+str(i)+"-DPM"] = False
 
 #for i in range(71,101):
-#    if i is 76:
-#        continue
 #    MOV_CAMERA_DICT["MOT17-"+str(i)+"-GT"] = True
 #    MOV_CAMERA_DICT["MOT17-"+str(i)+"-SDP"] = True
 #    MOV_CAMERA_DICT["MOT17-"+str(i)+"-FRCNN"] = True
