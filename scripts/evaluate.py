@@ -12,7 +12,6 @@ from mot_neural_solver.utils.evaluation import compute_mot_metrics
 import pandas as pd
 import scipy.io as sio
 import numpy as np
-import pair_nuclei as pair
 
 from sacred import SETTINGS
 SETTINGS.CONFIG.READ_ONLY_CONFIG=False
@@ -48,6 +47,4 @@ def main(_config, _run):
     constr_satisf_rate = model.track_all_seqs(dataset=test_dataset,
                                               output_files_dir = out_files_dir,
                                               use_gt = False,
-                                              verbose=True)
-
-    pair.pair_nuclei_and_generate_output(out_files_dir, _config['dataset'])
+                                              verbose=True, datasetName = _config['dataset'])
