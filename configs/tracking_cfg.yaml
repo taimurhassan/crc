@@ -1,7 +1,7 @@
 ckpt_path: trained_models/graph_nets/mot_mpnet_epoch_006.ckpt
 train_params:
   batch_size: 8
-  num_epochs: 25
+  num_epochs: 1000
   optimizer:
     type: Adam
     args:
