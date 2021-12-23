@@ -6,7 +6,6 @@ from mot_neural_solver.utils.misc import make_deterministic, get_run_str_and_sav
 from mot_neural_solver.path_cfg import OUTPUT_PATH, DATA_PATH
 import os.path as osp
 
-from mot_neural_solver.pl_module.pl_module import MOTNeuralSolver
 from mot_neural_solver.utils.evaluation import compute_mot_metrics
 
 import pandas as pd
