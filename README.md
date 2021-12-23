@@ -2,7 +2,7 @@
 
 This the official implementation of our paper, titled, *Learning to Recognize Cellular Communities in Histopathological Landscape*. In this codebase, we couple neural message solver with the nuclei graph decomposition network in order to effectively recognize cellular communities within the CRC whole slide images. The block diagram of the complete framework is illusrated below: 
 
-![Block_Diagram](images/B_D.png)
+![Block_Diagram](images/B_D_.png)
 
 ## Requirements
 This codebase is developed and fully tested on Anaconda using Ubuntu v20.04. Hence, we recommend the utilization of the same platform in order to avoid setup issues. Also, please note that we do not support Windows OS. 
