@@ -297,7 +297,7 @@ class MPNTracker:
 
         return seq_df
 
-    def track(self, seq_name, output_path=None, doRefinement = False):
+    def track(self, seq_name, output_path=None, doRefinement = True):
         """
         Main method. Given a sequence name, it tracks all detections and produces an output DataFrame, where each
         detection is assigned an ID.
