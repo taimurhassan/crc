@@ -22,7 +22,7 @@ def pair_nuclei_and_generate_output(out_files_dir, datasetName):
         endFrame = 14
     elif datasetName == "pannuke":
         startFrame = 1
-        endFrame = 2722
+        endFrame = 2721
     elif datasetName == "lizard":
         startFrame = 159
         endFrame = 238
