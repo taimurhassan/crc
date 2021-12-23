@@ -19,7 +19,7 @@ from mot_neural_solver.models.resnet import resnet50_fc256, load_pretrained_weig
 from mot_neural_solver.path_cfg import OUTPUT_PATH
 from mot_neural_solver.utils.evaluation import compute_perform_metrics
 from mot_neural_solver.tracker.mpn_tracker import MPNTracker
-import pair_nuclei as pair
+import pair_nuclei as pair 
 
 class MOTNeuralSolver(pl.LightningModule):
     """
