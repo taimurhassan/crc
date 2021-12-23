@@ -1,12 +1,7 @@
 import sacred
 from sacred import Experiment
 
-from mot_neural_solver.utils.misc import make_deterministic, get_run_str_and_save_dir
-
-from mot_neural_solver.path_cfg import OUTPUT_PATH, DATA_PATH
 import os.path as osp
-
-from mot_neural_solver.utils.evaluation import compute_mot_metrics
 
 import pandas as pd
 import scipy.io as sio
@@ -16,8 +11,8 @@ from sacred import SETTINGS
 SETTINGS.CONFIG.READ_ONLY_CONFIG=False
 
 def pair_nuclei_and_generate_output(out_files_dir, datasetName):
-    startFrame = 71
-    endFrame = 100
+    startFrame = 159
+    endFrame = 238
 
     if datasetName == "crchisto":
         startFrame = 71
@@ -26,12 +21,13 @@ def pair_nuclei_and_generate_output(out_files_dir, datasetName):
         startFrame = 1
         endFrame = 14
     elif datasetName == "pannuke":
-        startFrame = 0
-        endFrame = 2721
-    elif datasetName == "lizard":
         startFrame = 1
+        endFrame = 2722
+    elif datasetName == "lizard":
+        startFrame = 159
         endFrame = 238
 
+    print("Start Frame: ",startFrame, ", End Frame: ", endFrame, ", Dataset: ", datasetName)
 
     for i in range(startFrame, endFrame + 1):
         pred2 = []
