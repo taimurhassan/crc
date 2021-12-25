@@ -29,6 +29,7 @@ def cfg(cross_val_split, eval_params, dataset_params, graph_model_params, data_s
     assert dataset_params['precomputed_embeddings'], "Training without precomp. embeddings is not supp"
 
     # Only use tracktor for postprocessing if tracktor was used for preprocessing
+
     if 'tracktor' not in dataset_params['det_file_name']:
         eval_params['add_tracktor_detects'] = False
 
@@ -48,7 +49,10 @@ def cfg(cross_val_split, eval_params, dataset_params, graph_model_params, data_s
 
 
 @ex.automain
-def main(_config, _run):
+def main(_config, _run, prepr_w_tracktor=True):
+    if prepr_w_tracktor == False:
+        _config['dataset_params']['det_file_name'] = 'frcnn_prepr_det'
+        _config['eval_params']['add_tracktor_detects'] = False
 
     sacred.commands.print_config(_run)
     make_deterministic(12345)
