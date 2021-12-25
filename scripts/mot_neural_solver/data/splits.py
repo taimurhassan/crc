@@ -24,7 +24,12 @@ _SPLITS['mot15_test'] = {'2DMOT2015/test': test_seqs}
 dets = ('DPM', 'FRCNN', 'SDP')
 
 # Train sequences:
-train_seq_nums=  range(1,71)#(2, 4, 5, 9, 10, 11, 13)
+
+# CRCHisto => range(1,71)
+# CONSEP => range(1,28)
+# PANNUKE => range(1,2341)
+# Lizard => range(1,159)
+train_seq_nums=  range(1,2341)#(2, 4, 5, 9, 10, 11, 13)
 _SPLITS['mot17_train_gt'] = {'MOT17Labels/train': [f'MOT17-{seq_num:02}-GT' for seq_num in train_seq_nums]}
 _SPLITS['mot17_train'] = {'MOT17Labels/train': [f'MOT17-{seq_num:02}-{det}' for seq_num in train_seq_nums for det in dets]}
 _SPLITS['mot17_train_sdp'] = {'MOT17Labels/train': [f'MOT17-{seq_num:02}-SDP' for seq_num in train_seq_nums ]}
@@ -44,8 +49,10 @@ _SPLITS['debug'] = {'MOT17Labels/train': ['MOT17-02-FRCNN']}
 
 # CRCHisto => range(71,101)
 # CONSEP => range(1,15)
+# PANNUKE => range(1,2360)
+# Lizard => range(159,239)
 # Test sequences
-test_seq_nums=  range(1,15)#(1, 3, 6, 7, 8, 12, 14)
+test_seq_nums=  range(1,2360)#(1, 3, 6, 7, 8, 12, 14)
 _SPLITS['mot17_test'] = {'MOT17Labels/test': [f'MOT17-{seq_num:02}-{det}' for seq_num in test_seq_nums for det in dets]}
 
 ############
