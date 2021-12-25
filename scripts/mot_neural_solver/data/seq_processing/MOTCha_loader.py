@@ -92,7 +92,26 @@ MOV_CAMERA_DICT = {}
 #    MOV_CAMERA_DICT["MOT17-"+str(i)+"-DPM"] = True
 
 #CONSEP Sequences
-for i in range(1,28):
+#for i in range(1,28):
+#    initial = 'MOT17-0'
+#    if i > 9:
+#        initial = 'MOT17-'
+#    MOV_CAMERA_DICT[initial+str(i)+'-GT'] = False
+#    MOV_CAMERA_DICT[initial+str(i)+'-SDP'] = False
+#    MOV_CAMERA_DICT[initial+str(i)+'-FRCNN'] = False
+#    MOV_CAMERA_DICT[initial+str(i)+'-DPM'] = False
+
+#for i in range(1,15): # MOV_CAMERA_DICT issue was because of key error due to non-placement of 0 because single 1 to 9 digit. E.g., MOT17-2-GT is not a valid sequence. It should be MOT17-02-GT
+#    initial = 'MOT17-0'
+#    if i > 9:
+#        initial = 'MOT17-'
+#    MOV_CAMERA_DICT[initial+str(i)+'-GT'] = True
+#    MOV_CAMERA_DICT[initial+str(i)+'-SDP'] = True
+#    MOV_CAMERA_DICT[initial+str(i)+'-FRCNN'] = True
+#    MOV_CAMERA_DICT[initial+str(i)+'-DPM'] = True
+
+#PANNUKE Sequences
+for i in range(1,2341):
     initial = 'MOT17-0'
     if i > 9:
         initial = 'MOT17-'
@@ -101,7 +120,7 @@ for i in range(1,28):
     MOV_CAMERA_DICT[initial+str(i)+'-FRCNN'] = False
     MOV_CAMERA_DICT[initial+str(i)+'-DPM'] = False
 
-for i in range(1,15): # MOV_CAMERA_DICT issue was because of key error due to non-placement of 0 because single 1 to 9 digit. E.g., MOT17-2-GT is not a valid sequence. It should be MOT17-02-GT
+for i in range(1,2360): # MOV_CAMERA_DICT issue was because of key error due to non-placement of 0 because single 1 to 9 digit. E.g., MOT17-2-GT is not a valid sequence. It should be MOT17-02-GT
     initial = 'MOT17-0'
     if i > 9:
         initial = 'MOT17-'
@@ -109,6 +128,25 @@ for i in range(1,15): # MOV_CAMERA_DICT issue was because of key error due to no
     MOV_CAMERA_DICT[initial+str(i)+'-SDP'] = True
     MOV_CAMERA_DICT[initial+str(i)+'-FRCNN'] = True
     MOV_CAMERA_DICT[initial+str(i)+'-DPM'] = True
+
+#Lizard Sequences
+#for i in range(1,159):
+#    initial = 'MOT17-0'
+#    if i > 9:
+#        initial = 'MOT17-'
+#    MOV_CAMERA_DICT[initial+str(i)+'-GT'] = False
+#    MOV_CAMERA_DICT[initial+str(i)+'-SDP'] = False
+#    MOV_CAMERA_DICT[initial+str(i)+'-FRCNN'] = False
+#    MOV_CAMERA_DICT[initial+str(i)+'-DPM'] = False
+
+#for i in range(159,239): # MOV_CAMERA_DICT issue was because of key error due to non-placement of 0 because single 1 to 9 digit. E.g., MOT17-2-GT is not a valid sequence. It should be MOT17-02-GT
+#    initial = 'MOT17-0'
+#    if i > 9:
+#        initial = 'MOT17-'
+#    MOV_CAMERA_DICT[initial+str(i)+'-GT'] = True
+#    MOV_CAMERA_DICT[initial+str(i)+'-SDP'] = True
+#    MOV_CAMERA_DICT[initial+str(i)+'-FRCNN'] = True
+#    MOV_CAMERA_DICT[initial+str(i)+'-DPM'] = True
 
 DET_COL_NAMES = ('frame', 'id', 'bb_left', 'bb_top', 'bb_width', 'bb_height', 'conf')
 GT_COL_NAMES = ('frame', 'id', 'bb_left', 'bb_top', 'bb_width', 'bb_height', 'conf', 'label', 'vis')
