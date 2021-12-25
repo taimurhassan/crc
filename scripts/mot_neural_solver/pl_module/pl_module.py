@@ -152,14 +152,14 @@ class MOTNeuralSolver(pl.LightningModule):
 
             output_files_dir = output_files_dir.replace(':', '_')
             os.makedirs(output_files_dir, exist_ok=True)
-            _, constraint_sr[seq_name] = tracker.track(seq_name, output_path=osp.join(output_files_dir, seq_name + '.txt'))
+            #_, constraint_sr[seq_name] = tracker.track(seq_name, output_path=osp.join(output_files_dir, seq_name + '.txt'))
 
             if verbose:
                 print("Done! \n")
 
 
         if dataset.mode == 'test':
-            pair.pair_nuclei_and_generate_output(output_files_dir, datasetName)
+            pair.pair_nuclei_and_generate_output(output_files_dir, datasetName, self.hparams['dataset_params']['det_file_name'])
         constraint_sr['OVERALL'] = constraint_sr.mean()
 
         return constraint_sr
