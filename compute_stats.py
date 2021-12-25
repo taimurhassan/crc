@@ -57,6 +57,7 @@ def run_nuclei_type_stat(pred_dir, true_dir, type_uid_list=None, exhaustive=True
         true_inst_type = np.transpose(true_inst_type)
         if true_centroid.shape[0] != 0:
             true_inst_type = true_inst_type[:, 0]
+
         else:  # no instance at all
             true_centroid = np.array([[0, 0]])
             true_inst_type = np.array([0])
@@ -158,13 +159,11 @@ def run_nuclei_type_stat(pred_dir, true_dir, type_uid_list=None, exhaustive=True
         ignore = (paired_true_type == -1).sum()
         fp_fn_dt -= ignore
 
-    acc_type = tp_tn_dt / (tp_tn_dt + fp_fn_dt)
-    f1_d = 2 * tp_d / (2 * tp_d + w[0] * fp_d + w[1] * fn_d)
-
     w = [2, 2, 1, 1]
 
     if type_uid_list is None:
         type_uid_list = np.unique(true_inst_type_all).tolist()
+        #print(type_uid_list)
 
     results_list = []
     for type_uid in type_uid_list:
