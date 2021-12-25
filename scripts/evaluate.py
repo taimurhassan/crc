@@ -17,15 +17,16 @@ from sacred import SETTINGS
 SETTINGS.CONFIG.READ_ONLY_CONFIG=False
 
 ex = Experiment()
-ex.add_config('configs/tracking_cfg.yaml') 
+ex.add_config('configs/tracking_cfg.yaml')
 ex.add_config({'run_id': 'evaluation',
                'add_date': True,
                'precomputed_embeddings': True})
 
 @ex.automain
-def main(_config, _run):
+def main(_config, _run, prepr_w_tracktor=True):
 
     print(_config['dataset'])
+
     #input()
     #sacred.commands.print_config(_run) # No need to print config, as it's overwritten by the one from the ckpt.
     make_deterministic(12345)
@@ -39,6 +40,9 @@ def main(_config, _run):
                           'data_splits':_config['data_splits']})
     model.hparams['dataset_params']['precomputed_embeddings'] = _config['precomputed_embeddings']
     model.hparams['dataset_params']['img_batch_size'] = _config['dataset_params']['img_batch_size']
+
+    if prepr_w_tracktor == False:
+        model.hparams['dataset_params']['det_file_name'] = 'frcnn_prepr_det'
 
     #print(model.model)
     #input()
