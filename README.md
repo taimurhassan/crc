@@ -141,7 +141,7 @@ Lizard:
 | Proposed |0.526  |0.463            |0.477           | 0.493          | 0.568          | 0.352          | 0.450          |
 | Faster R-CNN |0.487 | 0.433          | 0.413          | 0.289          | 0.250          | 0.075          | 0.396          |
 | Prop + FRCNN | 0.487 |0.480          | 0.438          | 0.358          | 0.317          | 0.135          | 0.449          |
-| HoVer-Net | 0.526 |0.354          | 0.441          | 0.339          | 0.548          | 0.281          | 0.437          |
+| HoVer-Net | 0.526 |0.354          | 0.441          | 0.339          | 0.548          | 0.247          | 0.436          |
 
 Apart from this, some of the qualitative examples of the proposed framework (across all four datasets) is shown below:
 
