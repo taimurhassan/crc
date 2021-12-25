@@ -19,7 +19,7 @@ train_params:
   save_epoch_start: 1 # If the arg above is set to True, determines the first epoch after which we start saving ckpts
   tensorboard: False
 
-dataset: "consep"
+dataset: "pannuke"
 
 dataset_params:
   # Dataset Processing params:
