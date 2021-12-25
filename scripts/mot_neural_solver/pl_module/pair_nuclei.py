@@ -10,7 +10,7 @@ import numpy as np
 from sacred import SETTINGS
 SETTINGS.CONFIG.READ_ONLY_CONFIG=False
 
-def pair_nuclei_and_generate_output(out_files_dir, datasetName):
+def pair_nuclei_and_generate_output(out_files_dir, datasetName, detector = "tracktor_prepr_det"):
     startFrame = 159
     endFrame = 238
 
@@ -22,12 +22,14 @@ def pair_nuclei_and_generate_output(out_files_dir, datasetName):
         endFrame = 14
     elif datasetName == "pannuke":
         startFrame = 1
-        endFrame = 2721
+        endFrame = 2359
     elif datasetName == "lizard":
         startFrame = 159
         endFrame = 238
 
     print("Start Frame: ",startFrame, ", End Frame: ", endFrame, ", Dataset: ", datasetName)
+
+    print("\n\nBackbone: ",detector,"\n\n")
 
     for i in range(startFrame, endFrame + 1):
         pred2 = []
@@ -44,7 +46,10 @@ def pair_nuclei_and_generate_output(out_files_dir, datasetName):
 
         pn1 = out_files_dir.replace(':','_') + initial + str(i) + "-FRCNN.txt"
         pn2 = "data/MOT17Det/test" + initial + str(i) + "/gt/gt.txt"
-        pn3 = "data/MOT17Labels/test" + initial + str(i) + "-FRCNN/det/tracktor_prepr_det.txt"
+        if detector == "tracktor_prepr_det":
+            pn3 = "data/MOT17Labels/test" + initial + str(i) + "-FRCNN/det/tracktor_prepr_det.txt"
+        else:
+            pn3 = "data/MOT17Labels/test" + initial + str(i) + "-FRCNN/det/frcnn_prepr_det.txt"
 
         print(pn1)
         print(pn2)
@@ -86,7 +91,7 @@ def pair_nuclei_and_generate_output(out_files_dir, datasetName):
             if len(pairNodeCentroid) > 0:
                 pred1.append([round(pairNodeCentroid[0],2),round(pairNodeCentroid[1],2)])
             else:
-                pred1.append([round(x1,2),round(x2,2)])
+                pred1.append([round(x1,2),round(y1,2)])
 
         f1.close()
 
@@ -130,35 +135,55 @@ def pair_nuclei_and_generate_output(out_files_dir, datasetName):
         pred2 = []
         gt1 = []
         gt2 = []
-        for ii in range(min(len(inst_type_gt),len(inst_type_pred))):
-            if index > 99:
-                pn4 = "mot_neural_solver/output/"+ datasetName +"/true/detections_"+ str(i) + "_" + str(index2) + ".mat"
-                pn5 = "mot_neural_solver/output/"+ datasetName +"/pred/detections_"+ str(i) + "_" + str(index2) + ".mat"
 
-                index = 0
+        if datasetName == "pannuke":
+            pn4 = "mot_neural_solver/output/"+ datasetName +"/true/detections_"+ str(i) + ".mat"
+            pn5 = "mot_neural_solver/output/"+ datasetName +"/pred/detections_"+ str(i) + ".mat"
 
-                #print(len(pred2))
+            mdic = {"inst_centroid": inst_centroid_gt, "inst_type": inst_type_gt}
 
-                mdic = {"inst_centroid": gt1, "inst_type": gt2}
-
-                sio.savemat(pn4, mdic)
+            sio.savemat(pn4, mdic)
 
 
-                mdic = {"inst_centroid": pred1, "inst_type": pred2}
+            mdic = {"inst_centroid": inst_centroid_pred, "inst_type": inst_type_pred}
 
-                sio.savemat(pn5, mdic)
+            sio.savemat(pn5, mdic)
+        else:
+            for ii in range(min(len(inst_type_gt),len(inst_type_pred))):
+                if index > 99:
+                    pn4 = "mot_neural_solver/output/"+ datasetName +"/true/detections_"+ str(i) + "_" + str(index2) + ".mat"
+                    pn5 = "mot_neural_solver/output/"+ datasetName +"/pred/detections_"+ str(i) + "_" + str(index2) + ".mat"
 
-                pred1 = []
-                pred2 = []
-                gt1 = []
-                gt2 = []
-            else:
-                index = index + 1
-                index2 = index2 + 1
+                    index = 0
 
-            pred1.append(inst_centroid_pred[ii])
-            pred2.append(inst_type_pred[ii])
+                    #print(len(pred2))
 
-            if inst_centroid_gt[ii] != '':
-                gt1.append(inst_centroid_gt[ii])
-                gt2.append(inst_type_gt[ii])
+                    mdic = {"inst_centroid": gt1, "inst_type": gt2}
+
+                    sio.savemat(pn4, mdic)
+
+
+                    mdic = {"inst_centroid": pred1, "inst_type": pred2}
+
+                    sio.savemat(pn5, mdic)
+
+                    pred1 = []
+                    pred2 = []
+                    gt1 = []
+                    gt2 = []
+                else:
+                    index = index + 1
+                    index2 = index2 + 1
+
+                pred1.append(inst_centroid_pred[ii])
+                pred2.append(inst_type_pred[ii])
+
+                if inst_centroid_gt[ii] != '':
+                    gt1.append(inst_centroid_gt[ii])
+                    gt2.append(inst_type_gt[ii])
+
+                    if inst_type_gt[ii] == 4:
+                        print(inst_type_gt[ii], " type is coming in gt")
+
+                    if inst_type_gt[ii] == 5:
+                        print(inst_type_gt[ii], " type is coming in gt")
