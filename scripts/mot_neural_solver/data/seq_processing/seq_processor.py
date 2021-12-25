@@ -74,9 +74,15 @@ for seq_name in mot20_seqs:
         _SEQ_TYPES[seq_name] = 'MOT'
 
 
+
 # MOT17 Sequences
-mot17_seqs = [f'MOT17-{seq_num:02}-{det}' for seq_num in range(1,28) for det in ('DPM', 'SDP', 'FRCNN', 'GT')]
-mot17_seqs += [f'MOT17-{seq_num:02}-{det}' for seq_num in range(1,15) for det in ('DPM', 'SDP', 'FRCNN')]
+# CRCHisto => range(1,71), range(71,101)
+# CONSEP => range(1,28), range(1,15)
+# PANNUKE => range(1,2341), range(1,2360)
+# Lizard => range(1,159), range(159,239)
+
+mot17_seqs = [f'MOT17-{seq_num:02}-{det}' for seq_num in range(1,2341) for det in ('DPM', 'SDP', 'FRCNN', 'GT')]
+mot17_seqs += [f'MOT17-{seq_num:02}-{det}' for seq_num in range(1,2360) for det in ('DPM', 'SDP', 'FRCNN')]
 for seq_name in mot17_seqs:
     if 'GT' in seq_name:
         _SEQ_TYPES[seq_name] = 'MOT_gt'
