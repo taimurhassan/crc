@@ -155,7 +155,8 @@ Apart from this, some of the qualitative examples of the proposed framework (acr
 We would like to thank Guillem Brasó and his team for their excellent contribution towards developing [time-aware neural solver for multi-object tracking](https://github.com/dvl-tum/mot_neural_solver). Apart from this, we would like to thank Simon Graham and his team for their excellent work in releasing [HoVer-Net](https://github.com/vqdang/hover_net) and the original implementation of their performance metrics related to CRC nucleus segmentation and classification. Our codebase is extensively derived from these two repos, and as a token of our appreciation, we have acknowledged and cited their works in our manuscript.
 
 ## Citation
-Currently the paper related to this work is under review. Therefore, until it is published, you **MUST** cite the following paper if you use this codebase (or any part of it) in your research:
+If you use this codebase (or any part of it) in your research then you **MUST** cite the following paper:
+
 ```
 @article{Hassan2021Cancer,
   title   = {A Dilated Residual Hierarchically Fashioned Segmentation Framework for Extracting Gleason Tissues and Grading Prostate Cancer from Whole Slide Images},
