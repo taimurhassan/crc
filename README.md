@@ -1,6 +1,6 @@
 # Learning to Recognize Cellular Communities in Histopathological Landscape
 
-This the official implementation of our paper, titled, *Learning to Recognize Cellular Communities in Histopathological Landscape*. In this codebase, we couple neural message solver with the nuclei graph decomposition network in order to effectively recognize cellular communities within the CRC whole slide images. The block diagram of the complete framework is illusrated below: 
+This the official implementation of our paper, titled, *Learning to Recognize Cellular Communities in Histopathological Landscape*. In this codebase, we coupled neural solver with the nuclei graph decomposition network in order to effectively recognize cellular communities within the CRC whole slide images. The block diagram of the complete framework is illusrated below: 
 
 ![Block_Diagram](images/B_D_.png)
 
@@ -152,7 +152,7 @@ Apart from this, some of the qualitative examples of the proposed framework (acr
 
 
 ## Acknowledgement
-We would like to thank Guillem Brasó and his team for their excellent contribution towards developing [time-aware neural solver for multi-object tracking](https://github.com/dvl-tum/mot_neural_solver). Apart from this, we would like to thank Simon Graham and his team for their excellent work in releasing [HoVer-Net](https://github.com/vqdang/hover_net) and the original implementation of their performance metrics related to CRC nucleus segmentation and classification. Our codebase is extensively derived from these two repos, and as a token of our appreciation, we have acknowledged and cited their works in our manuscript.
+We would like to acknowledge that we have used some part of [mot neural solver](https://github.com/dvl-tum/mot_neural_solver) and [HoVer-Net](https://github.com/vqdang/hover_net) towards building the proposed nuclei propagation network. 
 
 ## Citation
 If you use this codebase (or any part of it) in your research then you **MUST** cite the following paper:
