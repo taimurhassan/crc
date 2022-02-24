@@ -20,30 +20,7 @@ The code flow is currently dependent on two virtual environments, i.e., `cellGra
     
 3. Download the CRC datasets from their respective link, convert the dataset using `datasetConverter.m` script. Place the converted dataset in the `data` folder within project's root directory.
 
-4. Create an `output` folder within root directory to save proposed framework's output. Its hierarchy is:
-
-```
-├── output
-│   ├── experiments
-│   │   └── time_date_train_w_default_config
-│   │   └── time_date_evaluation
-│   ├── trained_models
-│   |   └── frcnn
-│   |   └── graph_nets
-│   |   └── reid
-│   ├── crchisto
-│   │   └── true
-│   │   └── pred
-│   ├── consep
-│   │   └── true
-│   │   └── pred
-│   ├── pannuke
-│   │   └── true
-│   │   └── pred
-│   ├── lizard
-│   │   └── true
-│   │   └── pred
-```
+4. Create an `output` folder within root directory to save proposed framework's output. 
 
 ## Preprocessing
 To use each CRC dataset with this codebase, it has to be converted and each WSI (within the candidate dataset) has to be replicated into multiple frames (depending on the total number of nuclei classes). Also, each nuclei has to be connected to its adjacent pair in the breadth first search manner to yield the neighborhood-aware sequence graph representation. 
