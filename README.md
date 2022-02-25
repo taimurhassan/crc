@@ -4,6 +4,8 @@ This repo reflects the implementation of the paper, titled, *Learning to Detect 
 
 ![Block_Diagram](images/SystemDiagram.png)
 
+System Diagram of the proposed algorithm for nucleus classification in histology images.
+
 ## Requirements
 This codebase is developed and fully tested on Anaconda with **Python 3.6.10**, **Pytorch 1.5.0** with **CUDA 10.1** on **Ubuntu v20.04**. Hence, we recommend the utilization of the same execution environment in order to avoid any setup errors. Also, please note that we do not support Windows OS. 
 
