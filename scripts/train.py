@@ -28,7 +28,6 @@ def cfg(cross_val_split, eval_params, dataset_params, graph_model_params, data_s
     # Training requires the use of precomputed embeddings
     assert dataset_params['precomputed_embeddings'], "Training without precomp. embeddings is not supp"
 
-    # Only use tracktor for postprocessing if tracktor was used for preprocessing
 
     if 'tracktor' not in dataset_params['det_file_name']:
         eval_params['add_tracktor_detects'] = False
@@ -36,7 +35,7 @@ def cfg(cross_val_split, eval_params, dataset_params, graph_model_params, data_s
     # Make sure that the edges encoder MLP input dim. matches the number of edge features used.
     graph_model_params['encoder_feats_dict']['edge_in_dim'] = len(dataset_params['edge_feats_to_use'])
 
-    # Determine which sequences will be used for training  / validation
+    # Determine which histology patches will be used for training  / validation
     if cross_val_split is not None:
         assert cross_val_split in (1, 2, 3), f"{cross_val_split} is not a valid cross validation split"
         data_splits['train'] =['mot15_train_gt', f'mot17_split_{cross_val_split}_train_gt']
