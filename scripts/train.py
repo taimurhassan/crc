@@ -48,6 +48,7 @@ def cfg(cross_val_split, eval_params, dataset_params, graph_model_params, data_s
         eval_params['val_percent_check'] = 0
 
 
+        
 @ex.automain
 def main(_config, _run, prepr_w_tracktor=True):
     if prepr_w_tracktor == False:
@@ -70,7 +71,7 @@ def main(_config, _run, prepr_w_tracktor=True):
     ckpt_callback = ModelCheckpoint(save_epoch_start = _config['train_params']['save_epoch_start'],
                                     save_every_epoch = _config['train_params']['save_every_epoch'])
 
-    trainer = Trainer(gpus=1,
+    trainer = Trainer(gpus=2,
                       callbacks=[MOTMetricsLogger(compute_oracle_results = _config['eval_params']['normalize_mot_metrics']), ckpt_callback],
                       weights_summary = None,
                       checkpoint_callback=False,
