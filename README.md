@@ -4,7 +4,12 @@ This repo reflects the implementation of the paper, titled, *Learning to Detect 
 
 ![Block_Diagram](images/SystemDiagram.png)
 
-System Diagram of the proposed algorithm for nucleus classification in histology images.
+Fig. 2: Schematic illustration of the proposed Nuclear Community Detection (NCCD) algorithm for classifying distinct nuclei. Step (A) shows an input histology
+image patch. Step (B) shows the results of the nucleus detection and weak classification using an existing model. Step (C) shows the initial graph construction based
+on nearest neighbor scheme where each nucleus centroid is used as a node and each centroid is connected with its nearest nearest neighbors. Step (D) Shows node
+appearance encoding and edges positional encoding using pre-trained CNN network. Step (E) shows the message passing network where nodes and edges exchange
+messages and update accordingly. Step (F) shows binary edge classification for weak edge pruning. Step (G) shows the refined graph based on (F). Step (H) shows
+the classification label refinement based resulting in improved classification performance.
 
 ## Requirements
 This codebase is developed and fully tested on Anaconda with **Python 3.6.10**, **Pytorch 1.5.0** with **CUDA 10.1** on **Ubuntu v20.04**. Hence, we recommend the utilization of the same execution environment in order to avoid any setup errors. Also, please note that we do not support Windows OS. 
