@@ -1,4 +1,4 @@
-# Learning to Detect Nuclear Communities in Histology Images Using Message Passing Network
+# Nucleus Classification in Histology Images Using Message Passing Network
 
 This repo reflects the implementation of the paper, titled, *Learning to Detect Nuclear Communities in Histology Images Using Message Passing Network*. In this codebase, the neural solver is coupled with the nuclei graph decomposition network in order to effectively recognize cellular communities within the CRC whole slide images. The block diagram of the complete framework is illusrated below: 
 
