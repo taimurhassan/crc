@@ -30,7 +30,7 @@ The code flow is currently dependent on two virtual environments, i.e., `cellGra
 4. Create an `output` folder within root directory to save proposed framework's output. 
 
 ## Preprocessing
-To use each CRC dataset with this codebase, it has to be converted and each WSI (within the candidate dataset) has to be replicated into multiple frames (depending on the total number of nuclei classes). Also, each nuclei has to be connected to its adjacent pair in the breadth first search manner to yield the neighborhood-aware sequence graph representation. 
+To use each CRC dataset with this codebase, it has to be converted and each WSI (within the candidate dataset) has to be replicated (depending on the total number of nuclei classes). Also, each nuclei has to be connected to its adjacent pair using nearest neighbor scheme to yield the neighborhood-aware sequence graph representation. 
 
 For convenience, we also provide mirrors for the converted datasets. These mirrors can directly take you to the training and testing phase. The mirrors for the CRCHisto, CoNSeP and PanNuke are given below. However, if you need mirror for Lizard dataset, then please contact us. We can give you temporary link to download it as its physical size is over 150GB.
    1. [CRCHisto](https://drive.google.com/file/d/1H9J5vGE-e-7UgravOMiAYjZzRQH4vk5l/view?usp=sharing)
