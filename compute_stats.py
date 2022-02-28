@@ -84,8 +84,7 @@ def run_nuclei_type_stat(pred_dir, true_dir, type_uid_list=None, exhaustive=True
             true_centroid, pred_centroid, 12
         )
 
-        # * Aggreate information
-        # get the offset as each index represent 1 independent instance
+        
         true_idx_offset = (
             true_idx_offset + true_inst_type_all[-1].shape[0] if file_idx != 0 else 0
         )
@@ -95,7 +94,6 @@ def run_nuclei_type_stat(pred_dir, true_dir, type_uid_list=None, exhaustive=True
         true_inst_type_all.append(true_inst_type)
         pred_inst_type_all.append(pred_inst_type)
 
-        # increment the pairing index statistic
         if paired.shape[0] != 0:  # ! sanity
             paired[:, 0] += true_idx_offset
             paired[:, 1] += pred_idx_offset
