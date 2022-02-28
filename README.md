@@ -1,6 +1,6 @@
 # Nucleus Classification in Histology Images Using Message Passing Network
 
-This repo reflects the implementation of the paper, titled, *Nucleus Classification in Histology Images Using Message Passing Network*. In this codebase, the neural solver is coupled with the nuclei graph decomposition network in order to effectively recognize cellular communities within the CRC whole slide images. The block diagram of the complete framework is illusrated below: 
+This repo reflects the implementation of the paper, titled, *Nucleus Classification in Histology Images Using Message Passing Network*. In this repository, end-to-end message passing network is employed on nuclear graph/network (e.g., nodes repredent nuclei) in order to effectively classify nuclear communities within the whole slide images of colorectal cancer. The block diagram of the proposed algorithm is illusrated below: 
 
 ![Block_Diagram](images/SystemDiagram.png)
 
