@@ -1,6 +1,6 @@
 # Nucleus Classification in Histology Images Using Message Passing Network
 
-This repo reflects the implementation of the paper, titled, *Nucleus Classification in Histology Images Using Message Passing Network*. In this repository, end-to-end message passing network is employed on nuclear graph/network (e.g., nodes repredent nuclei) in order to effectively classify nuclear communities within the whole slide images of colorectal cancer. The block diagram of the proposed algorithm is illusrated below: 
+This repo reflects the implementation of the paper, titled, *Nucleus Classification in Histology Images Using Message Passing Network*. In this repository, end-to-end message passing network is employed on nuclear graph/network (e.g., nodes represent nuclei) in order to effectively classify nuclear communities within the whole slide images of colorectal cancer. The block diagram of the proposed algorithm is illusrated below: 
 
 ![Block_Diagram](images/SystemDiagram.png)
 
