@@ -79,8 +79,9 @@ If you use this codebase (or any part of it) in your research then you **MUST** 
 ```
 @article{Hassan2022NCD,
   title   = {Nucleus Classification in Histology Images Using Message Passing Network},
-  author  = {Taimur Hassan and Sajid Javed and Talha Qaiser and Arif Mahmood and Naoufel Werghi and Nasir Rajpoot},
-  Journal = {Under Review In Medical Image Analysis, 2022}
+  author  = {Taimur Hassan and Sajid Javed and Arif Mahmood and Talha Qaiser and Naoufel Werghi and Nasir Rajpoot},
+  Journal = {Medical Image Analysis},
+  year = {2022}
 }
 ```
 
